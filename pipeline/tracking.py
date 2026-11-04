@@ -54,6 +54,10 @@ _YUNET_SCORE_THRESH = 0.6  # min YuNet confidence to accept a detection
 # --------------------------------------------------------------------------- #
 def _cascade():
     import cv2
+    from pathlib import Path
+    local_path = Path(__file__).parent.parent / "assets" / "haarcascades" / _HAAR
+    if local_path.exists():
+        return cv2.CascadeClassifier(str(local_path))
     return cv2.CascadeClassifier(cv2.data.haarcascades + _HAAR)
 
 

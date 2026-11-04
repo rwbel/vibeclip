@@ -1,5 +1,8 @@
+from pathlib import Path
+
+
 def _project_row(data: dict, sdir: Path, pfile: Path,
-                 active: bool, live: dict | None) -> dict:
+                  active: bool, live: dict | None) -> dict:
     clips = data.get("clips") or []
     intake = data.get("intake") or {}
     src = data.get("source") or {}

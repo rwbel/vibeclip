@@ -83,7 +83,7 @@ def _analyze_main(clip_path: str, frame_h: int) -> tuple[str, float]:
     frame_count = int(cap.get(cv2.CAP_PROP_FRAME_COUNT)) or 1
     n = 9
     step = max(1, frame_count // n)
-    cascade = trk._cascade()
+    detector = trk._face_detector()
     edge_ratios: list[float] = []
     face_cys: list[float] = []
     face_hs: list[float] = []
@@ -97,7 +97,10 @@ def _analyze_main(clip_path: str, frame_h: int) -> tuple[str, float]:
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         e = cv2.Canny(gray, 100, 200)
         edge_ratios.append(float(np.count_nonzero(e)) / e.size)
-        f = trk._largest_face(cascade, gray)
+        # _face_detector() returns a detector adapter (YuNet or Haar), not a
+        # raw CascadeClassifier. Its detect() contract takes a BGR frame; the
+        # Haar adapter handles grayscale conversion internally.
+        f = trk._largest_face(detector, frame)
         if f is not None:
             _cx, cy, _w, fh = f
             face_cys.append(cy)
@@ -188,8 +191,8 @@ def apply_splitscreen(clip_path: str, params: dict,
       top_ratio  — fraction of frame height for the content (0.4-0.8, def 0.6)
       fit        — auto|cover|contain (auto = face-aware smart composition)
       spans      — optional [[s,e],...]; when given, the clip stays FULL-FRAME
-                   and the split only appears during these windows (see
-                   quiet_spans). Omitted/empty = split the WHOLE clip.
+                    and the split only appears during these windows (see
+                    quiet_spans). Omitted/empty = split the WHOLE clip.
 
     Resolution-agnostic: reads the clip's real frame so it works identically on
     the 540p editing proxy and the full-res export. Empty params (no path) is a

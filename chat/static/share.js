@@ -27,14 +27,14 @@
   };
   // Brand glyphs as self-contained 24×24 SVG tiles (white mark on brand fill).
   const ICONS = {
-    instagram: `<svg viewBox="0 0 24 24"><defs><linearGradient id="smIg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#feda75"/><stop offset=".45" stop-color="#d62976"/><stop offset="1" stop-color="#4f5bd5"/></linearGradient></defs><rect x="1" y="1" width="22" height="22" rx="6.5" fill="url(#smIg)"/><rect x="6" y="6" width="12" height="12" rx="4" fill="none" stroke="#fff" stroke-width="1.7"/><circle cx="12" cy="12" r="2.7" fill="none" stroke="#fff" stroke-width="1.7"/><circle cx="16.3" cy="7.7" r="1" fill="#fff"/></svg>`,
+    instagram: `<svg viewBox="0 0 24 24"><defs><linearGradient id="smIg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#feda75"/><stop offset=".45" stop-color="#d62976"/><stop offset="1" stop-color="#405de6"/></linearGradient></defs><rect x="1" y="1" width="22" height="22" rx="7" fill="url(#smIg)"/><circle cx="12" cy="12" r="5.2" fill="none" stroke="#fff" stroke-width="1.7"/><circle cx="17.4" cy="6.55" r="1.4" fill="#fff"/></svg>`,
     youtube: `<svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="5" fill="#FF0000"/><path d="M10 8.3l6 3.7-6 3.7z" fill="#fff"/></svg>`,
-    tiktok: `<svg viewBox="0 0 24 24"><rect x="1" y="1" width="22" height="22" rx="6.5" fill="#010101"/><path d="M14.2 5c.2 1.9 1.4 3.1 3.3 3.3v2.3c-1.1 0-2.2-.3-3.1-.9v4.6a4.1 4.1 0 1 1-4.1-4.1c.25 0 .5 0 .75.06v2.4a1.85 1.85 0 1 0 1.3 1.77V5z" fill="#fff"/></svg>`,
-    linkedin: `<svg viewBox="0 0 24 24"><rect x="1" y="1" width="22" height="22" rx="5" fill="#0A66C2"/><circle cx="6.4" cy="6.6" r="1.6" fill="#fff"/><rect x="5.1" y="9.4" width="2.6" height="8.5" fill="#fff"/><path d="M9.6 9.4h2.5v1.2c.4-.7 1.3-1.4 2.7-1.4 2.1 0 3.3 1.3 3.3 3.8v4.9h-2.6v-4.4c0-1.1-.4-1.9-1.4-1.9s-1.6.7-1.6 1.9v4.4H9.6z" fill="#fff"/></svg>`,
-    facebook: `<svg viewBox="0 0 24 24"><rect x="1" y="1" width="22" height="22" rx="6.5" fill="#1877F2"/><path d="M14.3 22v-7.3h2.4l.4-2.9h-2.8v-1.8c0-.8.3-1.4 1.5-1.4h1.4V5.9c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4v2.1H8.6v2.9h2.6V22z" fill="#fff"/></svg>`,
-    threads: `<svg viewBox="0 0 24 24"><rect x="1" y="1" width="22" height="22" rx="6.5" fill="#010101"/><path d="M16.3 11.5c-.1 0-.15-.05-.25-.06-.18-3.3-2-5.2-5-5.2-1.85 0-3.4.78-4.34 2.2l1.55 1.06c.7-1.06 1.8-1.28 2.8-1.28 1.55 0 2.7.9 2.85 2.55-.66-.15-1.36-.2-2.1-.16-2.4.14-3.95 1.36-3.85 3.34.05 1 .55 1.86 1.4 2.42.72.47 1.65.7 2.62.65 1.28-.07 2.28-.56 2.98-1.46.53-.68.86-1.55 1-2.65.6.36 1.05.84 1.3 1.42.43.99.46 2.6-.86 3.92-1.16 1.15-2.55 1.65-4.65 1.67-2.33-.02-4.1-.77-5.25-2.24C7.4 16.3 6.85 14.4 6.83 12c.02-2.4.57-4.3 1.62-5.65C9.6 4.88 11.37 4.13 13.7 4.1c2.35.02 4.13.78 5.3 2.26.57.73 1 1.65 1.3 2.74l1.83-.49c-.35-1.34-.9-2.5-1.65-3.46C20 3.2 17.65 2.2 14.66 2.18h-.02c-2.98.02-5.3 1.03-6.9 3-1.42 1.76-2.16 4.2-2.18 7.26v.02c.02 3.06.76 5.5 2.18 7.26 1.6 1.97 3.92 2.98 6.9 3h.02c2.65-.02 4.52-.72 6.06-2.26 2.02-2.02 1.96-4.55 1.3-6.1-.48-1.12-1.4-2.03-2.66-2.64a8 8 0 0 0-.36-.18z" fill="#fff"/></svg>`,
-    pinterest: `<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#E60023"/><path d="M12.4 5.5c-3.7 0-5.6 2.4-5.6 4.7 0 1.4.6 2.6 1.7 3 .2.1.4 0 .4-.2l.15-.6c.05-.2.03-.27-.12-.45-.32-.38-.53-.87-.53-1.56 0-2 1.55-3.8 4.05-3.8 2.2 0 3.42 1.3 3.42 3.05 0 2.3-1.04 4.24-2.58 4.24-.85 0-1.5-.7-1.29-1.57.25-1.03.73-2.14.73-2.88 0-.66-.36-1.22-1.1-1.22-.87 0-1.58.9-1.58 2.12 0 .77.27 1.3.27 1.3l-1.06 4.45c-.3 1.3-.04 2.9-.02 3.06 0 .1.13.12.18.05.08-.1 1.1-1.36 1.45-2.62.1-.36.57-2.2.57-2.2.28.53 1.1.99 1.97.99 2.6 0 4.36-2.36 4.36-5.52 0-2.4-2.03-4.63-5.12-4.63z" fill="#fff"/></svg>`,
-    bluesky: `<svg viewBox="0 0 24 24"><rect x="1" y="1" width="22" height="22" rx="6.5" fill="#0085FF"/><path d="M12 11.1C10.9 9 8.1 6.6 6.7 6.9c-1 .25-.7 2.1-.4 3.4.3 1.3 1.3 4 4 4.3-2.6.45-3.2 2.2-2.1 3.3.85.85 2.4.2 3.8-2.6 1.4 2.8 2.95 3.45 3.8 2.6 1.1-1.1.5-2.85-2.1-3.3 2.7-.3 3.7-3 4-4.3.3-1.3.6-3.15-.4-3.4-1.4-.3-4.2 2.1-5.3 4.2z" fill="#fff"/></svg>`,
+    tiktok: `<svg viewBox="0 0 24 24"><rect x="1" y="1" width="22" height="22" rx="6.5" fill="#010101"/><path d="M14.2 5c.2 1.9 1.4 3.1 3.3 3.3v2.3c-1.1 0-2.2-.3-3.1-.9v4.6a4.1 4.1 0 1 1-4.1-4.1c.3 0 .6 0 .9.1v2.4a1.7 1.7 0 1 0 1.5 1.7V5z" fill="#fff"/></svg>`,
+    linkedin: `<svg viewBox="0 0 24 24"><rect x="1" y="1" width="22" height="22" rx="5" fill="#0A66C2"/><circle cx="6.4" cy="6.6" r="1.6" fill="#fff"/><rect x="5.1" y="9.4" width="2.6" height="8.5" rx="1.1" fill="#fff"/><rect x="9.9" y="9.4" width="2.7" height="8.5" rx="1.1" fill="#fff"/><path d="M14.1 9.4h2.7v1.1h.1c.4-.8 1.4-1.6 2.9-1.6 3.1 0 3.6 2 3.6 4.7v4.3h-2.9v-4c0-1-.1-2.2-1.4-2.2-1.4 0-1.6 1.1-1.6 2.2v4h-2.9V9.4z" fill="#fff"/></svg>`,
+    facebook: `<svg viewBox="0 0 24 24"><rect x="1" y="1" width="22" height="22" rx="6.5" fill="#1877F2"/><path d="M14.3 22v-7.3h2.4l.4-2.9h-2.8v-1.8c0-.8.3-1.4 1.5-1.4h1.4V5.9c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.2v2.1H8.4v2.9h2.8V22h2.9z" fill="#fff"/></svg>`,
+    threads: `<svg viewBox="0 0 24 24"><rect x="1" y="1" width="22" height="22" rx="6.5" fill="#010101"/><path d="M16.3 11.5c-.1 0-.15-.05-.25-.06-.18-3.3-2-5.2-5-5.2-1.85 0-3.4.78-4.34 2.2l1.55 1.1c.7-.98 1.8-1.47 3.04-1.47 1.8 0 2.9 1.04 3.12 2.8-.52-.21-1.1-.3-1.76-.3-2.8 0-4.33 1.5-4.33 3.67 0 2.2 1.62 3.76 4.08 3.76 2.06 0 3.45-1.06 4.03-2.85l-1.64-.7c-.39.86-1.2 1.45-2.1 1.45-1.3 0-2.2-.9-2.2-2.12 0-1.38 1.02-2.18 2.4-2.18.75 0 1.42.17 1.93.52.29.2.54.46.72.82.19.38.32.82.38 1.3h1.85c-.04-.7-.28-1.42-.7-2.12-.37-.62-.9-1.12-1.57-1.48z" fill="#fff"/></svg>`,
+    pinterest: `<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#E60023"/><path d="M12.4 5.5c-3.7 0-5.6 2.4-5.6 4.7 0 1.4.6 2.6 1.7 3 .2.1.4 0 .4-.2l.15-.6c.05-.2.03-.27-.12-.45-.32-.42-.53-.98-.53-1.75 0-2.24 1.67-4.2 4.36-4.2 2.1 0 3.4 1.26 3.4 3.04 0 2.28-1.02 4.2-2.56 4.2-.8 0-1.4-.67-1.2-1.5l.44-1.8c.15-.65.45-1.32.45-1.84 0-.44-.24-.8-.73-.8-.58 0-1.04.6-1.04 1.38 0 .5.17 1.06.25 1.54l.3 1.13c.16.73.02 1.67-.6 2.24-.74.68-1.68.97-2.7.97-1.75 0-3.1-1.38-3.1-3.4 0-2.54 1.89-5.3 5.58-5.3 3.12 0 5.12 2.25 5.12 4.68 0 3.22-1.8 5.28-4.01 5.28-.84 0-1.61-.46-1.87-1l-.65 2.48c-.2.76-.72 1.63-1.17 2.18.82.23 1.7.35 2.57.35 5.2 0 8.52-3.77 8.52-8.66 0-4.66-3.67-8.24-8.42-8.24z" fill="#fff"/></svg>`,
+    bluesky: `<svg viewBox="0 0 24 24"><rect x="1" y="1" width="22" height="22" rx="6.5" fill="#0085FF"/><path d="M12 11.1C10.9 9 8.1 6.6 6.7 6.9c-1 .25-.7 2.1-.4 3.4.3 1.3 1.3 4 4 4.3-2.6.45-3.2 1.9-3.2 3.2 0 2 1.7 2.9 3.8 2.9 2.3 0 3.6-1.2 4.1-2.9.6 1.7 1.8 2.9 4.1 2.9 2.1 0 3.8-.9 3.8-2.9 0-1.3-.7-2.7-3.2-3.2 2.7-.3 3.7-3 4-4.3.3-1.3.6-3.1-.4-3.4-1.4-.3-4.2 2.1-5.3 4.2z" fill="#fff"/></svg>`,
   };
   // Soft per-platform caption guidance (counter turns amber past it).
   const CAPTION_SOFT = { instagram: 2200, linkedin: 3000, tiktok: 2200,
@@ -235,14 +235,28 @@
 
   async function publish() {
     if (!picked.size || polling) return;
+
+    try {
+      const st = await fetch("/api/state");
+      if (st.status === 409) {
+        setStatus("No hay ningún proyecto activo. Abre un proyecto antes de compartir.", "err");
+        return;
+      }
+    } catch (e) {
+      setStatus("No se pudo comprobar el proyecto activo.", "err");
+      return;
+    }
+
     $("smIssues").innerHTML = "";
     polling = true; updatePublish();
     setStatus("Publishing…", "");
     let r, d;
     try {
+      const project = new URLSearchParams(window.location.search).get("project") || "";
       r = await fetch("/api/social/share", {
         method: "POST", headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          project,
           clip_id: clip.id, account_ids: [...picked], kind,
           caption: $("smCaption").value,
         }),
@@ -318,3 +332,4 @@
     });
   });
 })();
+

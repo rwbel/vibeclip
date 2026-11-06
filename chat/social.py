@@ -20,6 +20,7 @@ from pydantic import BaseModel
 
 from chat import auth, social_db
 from chat.jobs import MANAGER
+from chat.session import Session
 from chat.social_providers import (PLATFORM_KINDS, ProviderError, get_provider,
                                     validate)
 
@@ -81,6 +82,7 @@ def social_disconnect(account_id: int,
 # --------------------------------------------------------------------- share
 class ShareIn(BaseModel):
     clip_id: int
+    project: str | None = None
     account_ids: list[int] = []
     kind: str = "post"
     caption: str = ""
@@ -92,6 +94,15 @@ def social_share(body: ShareIn, request: Request,
                  _user: dict = Depends(auth.require_user)):
     import chat.app as appmod
 
+    sess = appmod.SESSION
+    if sess is None and body.project:
+        try:
+            if (appmod.SESSIONS_DIR / body.project / "project.json").exists():
+                sess = Session.open_existing(body.project)
+                appmod.SESSION = sess
+        except Exception:  # noqa: BLE001
+            sess = None
+
     prov = get_provider()
     if not prov.enabled:
         return JSONResponse(
@@ -101,6 +112,9 @@ def social_share(body: ShareIn, request: Request,
     if not body.account_ids:
         return JSONResponse({"error": "Pick at least one account."},
                             status_code=400)
+    if sess is None:
+        return JSONResponse({"error": "No active project."},
+                            status_code=409)
 
     # Resolve the destination accounts (must belong to this user).
     accounts = [social_db.get_account(_user["id"], aid)
@@ -200,3 +214,4 @@ def _public_accounts(rows: list[dict]) -> list[dict]:
     return [{"id": r["id"], "platform": r["platform"],
              "display_name": r["display_name"], "avatar_url": r["avatar_url"],
              "status": r["status"]} for r in rows]
+
